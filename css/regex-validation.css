@@ -1,0 +1,67 @@
+.coral3-Checkbox.regex-invalid + .regex-error, .coral-Checkbox.regex-invalid + .regex-error{
+	vertical-align: -webkit-baseline-middle;
+}
+
+section.regex-invalid,.coral3-Checkbox.regex-invalid, .coral-Form--vertical .coral-Checkbox.regex-invalid{
+	display: inline-table;
+}
+
+
+.regex-invalid.coral-RichText-editable.is-edited, .regex-invalid.cq-RichText-editable.is-edited, .coral3-FileUpload .regex-invalid, .coral3-Multifield.regex-invalid, .coral-Multifield.regex-invalid {
+    box-shadow: 0 0 3px #e14132;
+    border: 1px solid #e14132;
+}
+
+.regex-invalid.coral3-Textfield.is-invalid {
+	box-shadow: 0 0 3px #e14132 !important;
+}
+
+/* popup css*/
+
+#regexDialogId .coral3-Dialog-header, #regexDialogId .coral-Dialog-header{
+	    text-align: center;
+}
+
+#regexDialogId div.heading{
+	margin-bottom: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #982217;
+}
+
+#regexDialogId div.content p{
+	margin: 0px;
+    color: #505050;
+    font-family: Verdana;
+    font-size:14px;
+}
+
+#regexDialogId div.content p>span.errTab{
+	font-weight:bold;
+    color: #0c528c;
+    font-family: sans-serif;
+}
+
+#regexDialogId div.content p>span.errLabel{
+	font-weight:bold;
+    color: #d60606;
+    font-family: sans-serif;
+}
+
+#regexDialogId div.content p>span.err-separator{
+    font-family: cursive;
+    font-size: 15px;
+    margin: 0 5px;
+    color: #000;
+    font-weight:bold;
+}
+
+#regexDialogId .coral3-Dialog-footer .coral3-Button, #regexDialogId .coral-Dialog-footer .coral-Button{
+    width: 100px;
+}
+
+/* dailig scrolling */
+
+.coral-Dialog .coral-Dialog-wrapper .coral-Dialog-content .cq-dialog-content{
+	overflow-y: scroll !important;
+}
