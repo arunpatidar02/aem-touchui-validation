@@ -1,19 +1,82 @@
+
 # AEM - Touch UI Component Dialog Custom Validation
 
-Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
-
+You already know the use of Granite UI widget's **required** property - Indicates if the field is mandatory to be filled and shows ***Please fill out this field*** if field is empty. But there are cases where the dialog fields are required custom validation with custom error message.
 
 ## Solution
 
-StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
+The custom validations for touch UI dialog fields are very common, which required writing client side javascript/jquery scrips but end up writing too much code. 
+
+I inspired with classic UI widget **regex** and **regexText** properties, which allow widget(field) value checked against **regex** property value and shows custom error message, set in **regexText** property . 
+The solution for Touch UI is same, which allows custom validation for Granite(Coral3) fileds.
+
+
 
 ## Supports
 
-The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the **New file** button in the file explorer. You can also create folders by clicking the **New folder** button.
+This solution is mainly targeted for new version on AEM and most used granite input type resources. Below is the list of supported AEM version and Resource types.
+
+#### AEM Version
+ - AEM 6.3 AEM 
+ - 6.4 and above
+
+#### Granite(Coral3) Resource type
+ - granite/ui/components/coral/foundation/form/textfield
+ - granite/ui/components/coral/foundation/form/numberfield
+ - granite/ui/components/coral/foundation/form/textarea
+ - cq/gui/components/authoring/dialog/richtext
+ - granite/ui/components/coral/foundation/form/select
+ - granite/ui/components/coral/foundation/form/checkbox
+ - granite/ui/components/coral/foundation/form/radiogroup
+ - granite/ui/components/coral/foundation/form/fieldset
+ - granite/ui/components/coral/foundation/form/pathfield
+ - granite/ui/components/coral/foundation/form/pathbrowser
+ - cq/gui/components/authoring/dialog/fileupload
+ - granite/ui/components/coral/foundation/form/colorfield
+ - granite/ui/components/coral/foundation/form/datepicker
+ - granite/ui/components/coral/foundation/form/multifield
 
 ## Properties
 
-All your files are listed in the file explorer. You can switch from one to another by clicking a file in the list.
+To allow custom validation **granite:data** node will be added as the field's sibling node and following properties should be created in **granite:data** node 
+ - regex 
+ - regexText
+ - regexMode
+ - min
+ - max
+> Note : **regexText** *and* **regexMode** *properties are optional.* **min** *and* **max** properties are also optional and required for multifield validation.
+
+
+#### regex
+regex property (String) : defines the validation type. The following values are available:
+|  |  |  |
+|--|--|--|
+|  |  |  |
+|--|--|--|
+
+
+***Regular Expression***    The field value is validated against this regular expression.
+***required***  : The field is checked for empty or non-empty constrains, similar to required(Boolean)=true, but this will provide custome error meaage e.g. Header can't be empty.
+***multifield***    The multifield will be validate to check min or/and max items. min and max property will be added to specify min and max allowed field for multifild item
+
+
+Screenshots
+
+
+
+
+The field can be linked to choose how to display error. The regexMode property (String) defines how the error will be shown. The following values are available:
+Property Value  Description
+floating    The error will be display only in Popup (another Coral dialog).
+inline  (default value). The error will be display alongside field in the componnet dailog. similar to required property validation errors
+auto    Error will be shown in both the mode, inline and well as popup.
+
+
+#### AEM Version
+In case of Popup mode of error display. The popup Header and content Header can be set using following properties in the content/other top dialog nodes:
+regex-content-heading(String) : Popup dialog Header 
+regex-model-heading(String) : Popup dialog content header
+
 
 ## Error mode
 
