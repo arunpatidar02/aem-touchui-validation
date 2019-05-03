@@ -38,7 +38,7 @@ This solution is mainly targeted for new version on AEM and most used granite in
 
 ## Properties
 
-To allow custom validation **granite:data** node will be added as the field's sibling node and following properties should be created in **granite:data** node 
+To allow custom validation A **granite:data** node of type nt:unstructured will be created as the field's sibling node and has the following properties:
  - regex 
  - regexText
  - regexMode
@@ -47,56 +47,74 @@ To allow custom validation **granite:data** node will be added as the field's si
 > Note : **regexText** *and* **regexMode** *properties are optional.* **min** *and* **max** properties are also optional and required for multifield validation.
 
 
-#### regex
-regex property (String) : defines the validation type. The following values are available:
-|  |  |  |
-|--|--|--|
-|  |  |  |
-|--|--|--|
+||||
+|--- |--- |--- |
+|**Name**|**Type**|**Description**|
+|regex|String|This property specify the type of validation based on values. Possible values are ***Regular Expression***, `required` and `multifield`.|
+|regexText|String|Message to display in case of field input is not valid. `Invalid input` is default. |
+|regexMode|String|Indicates how to display error messages. Possible values are `inline`, `floating` and `auto`. `inline` is default.|
+|min|String|Define Minimum items required for the Multifield.|
+|max|String|Define Maximum items allowed for the Multifield.|
 
-
-***Regular Expression***    The field value is validated against this regular expression.
-***required***  : The field is checked for empty or non-empty constrains, similar to required(Boolean)=true, but this will provide custome error meaage e.g. Header can't be empty.
-***multifield***    The multifield will be validate to check min or/and max items. min and max property will be added to specify min and max allowed field for multifild item
-
-
-Screenshots
+> Note : `min` and `max` both are optional and required in `regex` property set to ***multifield***
 
 
 
+#### Configuring *regex* property
+|||
+|--- |--- |
+|**Value**|**Description**|
+|Regular Expression|If value is set to regular expression, field will be validated against specified regEx string.e.g. `^#([A-Fa-f0-9]{3}){1,2}$`|
+|required|if the field is mandatory to be filled. |
+|multifield|if the multifield is mandatory to be have minimum or/and maximum items. In this case `min` and/or `max` properties should be set.|
 
-The field can be linked to choose how to display error. The regexMode property (String) defines how the error will be shown. The following values are available:
-Property Value  Description
-floating    The error will be display only in Popup (another Coral dialog).
-inline  (default value). The error will be display alongside field in the componnet dailog. similar to required property validation errors
-auto    Error will be shown in both the mode, inline and well as popup.
+#### Configuring *regexMode* property
+|||
+|--- |--- |
+|**Value**|**Description**|
+|inline|The error message will be displayed alongside field in the component dailog. similar to OOTB `required` property validation error.|
+|floating|To display error message in model(popup) window |
+|auto|Error message will be shown in both the mode, i.e. inline as well as popup.|
+
+## Other Properties
+
+In case of `regexMode`  property value is *floating* , setup to show error message in popup window. The popup dialog Header and content Header can be set using the following properties added in the child node of  `cq:dialog` node:
+||||
+|--- |--- |--- |
+|**Name**|**Type**|**Description**|
+|regex-model-heading|String|This property specify the Header text of model(popup). `Dialog cannot be submitted` is default|
+|regex-content-heading|String|Popup dialog content header. `Following Fields are invalid` is default. |
 
 
-#### AEM Version
-In case of Popup mode of error display. The popup Header and content Header can be set using following properties in the content/other top dialog nodes:
-regex-content-heading(String) : Popup dialog Header 
-regex-model-heading(String) : Popup dialog content header
+
+## Pros and Cons
+
+ - Solution is based on javascript, no need to do any server side changes or
+   resource overlay.
+ - easy to plug-in to existing aem dialog clientlibs.
+ - Easy to use.
+ - Supports latest versions of AEM i.e. AEM 6.3 and above
+ #### Limitations
+ - Doesn't support coral2 type resource type.
+ - Only support Granite Resources(Mentioned in the [Supports][] section)
+ - The popup message only display invalid items rows in below format 
+	 - `Tab--> FieldLabel : RegexText`. 
+	 - And for multifield `Tab--> FieldLabel[index] : RegexText`. 
+	 - But does not show complete nested structure(breadcrumb).
+ - Avoid using both OOTB `required` property and `regex`  property validations together. This can results in conflicts.
+ - In case of inline error mode , if `fieldLabel`  property is missing then error tooltip may be shown in next line.(OOTB behaviour)
 
 
-## Error mode
 
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
 
-## Advantages
 
-You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
+
+
 
 ## Limitations
 
-You can export the current file by clicking **Export to disk** in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.
 
-There are two types of synchronization and they can complement each other:
-
-- The workspace synchronization will sync all your files, folders and settings automatically. This will allow you to fetch your workspace on any other device.
-	> To start syncing your workspace, just sign in with Google in the menu.
-
-- The file synchronization will keep one file of the workspace synced with one or multiple files in **Google Drive**, **Dropbox** or **GitHub**.
-	> Before starting to sync files, you must link an account in the **Synchronize** sub-menu.
+In case of inline error mode , if fieldLabel are missing the error tooltip may be shown in next line.
 
 Publishing in StackEdit makes it simple for you to publish online your files. Once you're happy with a file, you can publish it to different hosting platforms like **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **WordPress** and **Zendesk**. With [Handlebars templates](http://handlebarsjs.com/), you have full control over what you export.
 
@@ -114,6 +132,23 @@ SmartyPants converts ASCII punctuation characters into "smart" typographic punct
 
 
 
+
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+There must be at least 3 dashes separating each header cell.
+The outer pipes (|) are optional, and you don't need to make the 
+raw Markdown line up prettily. You can also use inline Markdown.
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
+```
 
 
 Touch ui - regex validation
