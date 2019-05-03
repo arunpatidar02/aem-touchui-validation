@@ -1,13 +1,13 @@
 
 # AEM - Touch UI Component Dialog Field Regex/Custom Validation
 
-You already know the use of Granite UI widget's **required** property - Indicates if the field is mandatory to be filled and shows ***Please fill out this field*** if field is empty. But there are cases where the dialog fields are required custom validation with custom error message.
+You already know the use of Granite UI widget's **required** property - Indicates if the field is mandatory to be filled and shows ***Please fill out this field*** if the field is empty. But there are cases where the dialog fields are required custom validation with the custom error message.
 
 ## Solution
 
 The custom validations for touch UI dialog fields are very common, which required writing client side javascript/jquery scrips but end up writing too much code. 
 
-I inspired with classic UI widget **regex** and **regexText** properties, which allow widget(field) value checked against **regex** property value and shows custom error message, set in **regexText** property . 
+I created a solution, inspired by classic UI widget **regex** and **regexText** properties, which allow widget(field) value checked against **regex** property value and shows custom error message, set in **regexText** property . 
 The solution for Touch UI is same, which allows custom validation for Granite(Coral3) fileds.
 
 
@@ -44,7 +44,7 @@ To allow custom validation A **granite:data** node of type nt:unstructured will 
 #### Configuring *regexMode* property
 |**Value**|**Description**|
 |--- |--- |
-|inline|The error message will be displayed alongside field in the component dailog. similar to OOTB `required` property validation error.|
+|inline|The error message will be displayed alongside field in the component dialog. similar to OOTB `required` property validation error.|
 |floating|To display error message in model(popup) window |
 |auto|Error message will be shown in both the mode, i.e. inline as well as popup.|
 
@@ -126,9 +126,9 @@ This solution is mainly targeted for new version on AEM and most used granite in
  #### Limitations
  - Doesn't support coral2 type resource type.
  - Only support Granite resources(mentioned in the [Supports](#granitecoral3-resource-type) section)
- - The popup message only display invalid items rows in below format 
+ - The popup message only displays invalid items rows in below format 
 	 - `Tab--> FieldLabel : RegexText`. 
 	 - And for multifield `Tab--> FieldLabel[index] : RegexText`. 
 	 - But does not show complete nested structure(breadcrumb).
  - Avoid using both OOTB `required` property and `regex`  property validations together. This can results in conflicts.
- - In case of inline error mode , if `fieldLabel`  property is missing then error tooltip may be shown in next line.(OOTB behaviour).
+ - In case of inline error mode , if `fieldLabel`  property is missing then error tooltip may be shown in next line(OOTB behaviour).
