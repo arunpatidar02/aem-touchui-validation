@@ -1,2 +1,7 @@
 #base=js
-touchui.regex.validation.aemV63.js
+
+#AEM 6.5 and above
+touchui.regex.validation.js
+
+#AEM 6.3 version file
+#touchui.regex.validation.aemV63.js
