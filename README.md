@@ -107,11 +107,12 @@ This solution is mainly targeted for new version on AEM and most used granite in
 
 ## Reference
 #### Sample Package
- Sample package contains clinetlibs and sample component dailog with all above fields property setup
+ Sample package contains clientlibs and sample component dialog with all above fields property setup
+ 
  [aem-touchui-regexvalidation-sample-1.zip](https://github.com/arunpatidar02/aem-touchui-validation)
  
  #### More Info
- More details with screenshot is availble at [https://aemlab.blogspot.com/2019/05/aem-touch-ui-component-dialog-field.html](https://aemlab.blogspot.com/2019/05/aem-touch-ui-component-dialog-field.html) 
+ More details with screenshots is availble at [https://aemlab.blogspot.com/2019/05/aem-touch-ui-component-dialog-field.html](https://aemlab.blogspot.com/2019/05/aem-touch-ui-component-dialog-field.html) 
 
 
 ## Pros and Cons
