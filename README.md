@@ -61,8 +61,8 @@ In case of `regexMode`  property value is *floating* , setup to show error messa
 ### Prerequisites
 To setup this a clienlibs of category `cq.authoring.dialog` needs to be created from crxde. 
 
- - Copy `touchui.regex.validation.css` css file from
- - Copy below js  based on AEM version
+ - Copy `touchui.regex.validation.css` css file from [css](https://github.com/arunpatidar02/aem-touchui-validation/tree/master/css) folder
+ - Copy below js  based on AEM version from [js](https://github.com/arunpatidar02/aem-touchui-validation/tree/master/js) folder
 
 |**Version**|**Js file**|
 |--- |--- |
