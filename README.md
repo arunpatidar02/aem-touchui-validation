@@ -114,9 +114,10 @@ This solution is mainly targeted for new version on AEM and most used granite in
  - easy to plug-in to existing aem dialog clientlibs.
  - Easy to use.
  - Supports latest versions of AEM i.e. AEM 6.3 and above
+ - Support most commonly used Granite(Coral3) resources type fields
  #### Limitations
  - Doesn't support coral2 type resource type.
- - Only support Granite Resources(Mentioned in the [Supports](#granitecoral3-resource-type) section)
+ - Only support Granite resources(mentioned in the [Supports](#granitecoral3-resource-type) section)
  - The popup message only display invalid items rows in below format 
 	 - `Tab--> FieldLabel : RegexText`. 
 	 - And for multifield `Tab--> FieldLabel[index] : RegexText`. 
