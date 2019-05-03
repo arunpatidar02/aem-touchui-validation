@@ -105,16 +105,6 @@ This solution is mainly targeted for new version on AEM and most used granite in
  - granite/ui/components/coral/foundation/form/datepicker
  - granite/ui/components/coral/foundation/form/multifield
 
-## Reference
-#### Sample Package
- Sample package contains clientlibs and sample component dialog with all above fields property setup
- 
- [aem-touchui-regexvalidation-sample-1.zip](https://github.com/arunpatidar02/aem-touchui-validation)
- 
- #### More Info
- More details with screenshots is availble at [https://aemlab.blogspot.com/2019/05/aem-touch-ui-component-dialog-field.html](https://aemlab.blogspot.com/2019/05/aem-touch-ui-component-dialog-field.html) 
-
-
 ## Pros and Cons
 
  - Solution is based on javascript, no need to do any server side changes or
@@ -132,3 +122,15 @@ This solution is mainly targeted for new version on AEM and most used granite in
 	 - But does not show complete nested structure(breadcrumb).
  - Avoid using both OOTB `required` property and `regex`  property validations together. This can results in conflicts.
  - In case of inline error mode , if `fieldLabel`  property is missing then error tooltip may be shown in next line(OOTB behaviour).
+
+
+## Reference
+#### Sample Package
+ Sample package contains clientlibs and sample component dialog with all above fields property setup
+ 
+ [aem-touchui-regexvalidation-sample-1.zip](https://github.com/arunpatidar02/aem-touchui-validation)
+ 
+ #### More Info
+ More details with screenshots is availble at [https://aemlab.blogspot.com/2019/05/aem-touch-ui-component-dialog-field.html](https://aemlab.blogspot.com/2019/05/aem-touch-ui-component-dialog-field.html) 
+
+
