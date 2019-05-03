@@ -59,9 +59,3 @@ section.regex-invalid,.coral3-Checkbox.regex-invalid, .coral-Form--vertical .cor
 #regexDialogId .coral3-Dialog-footer .coral3-Button, #regexDialogId .coral-Dialog-footer .coral-Button{
     width: 100px;
 }
-
-/* dailig scrolling */
-
-.coral-Dialog .coral-Dialog-wrapper .coral-Dialog-content .cq-dialog-content{
-	overflow-y: scroll !important;
-}
