@@ -97,7 +97,7 @@ This solution is mainly targeted for new version on AEM and most used granite in
  - Supports latest versions of AEM i.e. AEM 6.3 and above
  #### Limitations
  - Doesn't support coral2 type resource type.
- - Only support Granite Resources(Mentioned in the [Supports](https://github.com/arunpatidar02/aem-touchui-validation/blob/master/README.md#granitecoral3-resource-type) section)
+ - Only support Granite Resources(Mentioned in the [Supports](#granitecoral3-resource-type) section)
  - The popup message only display invalid items rows in below format 
 	 - `Tab--> FieldLabel : RegexText`. 
 	 - And for multifield `Tab--> FieldLabel[index] : RegexText`. 
