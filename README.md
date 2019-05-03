@@ -1,5 +1,5 @@
 
-# AEM - Touch UI Component Dialog Custom Validation
+# AEM - Touch UI Component Dialog Field Regex/Custom Validation
 
 You already know the use of Granite UI widget's **required** property - Indicates if the field is mandatory to be filled and shows ***Please fill out this field*** if field is empty. But there are cases where the dialog fields are required custom validation with custom error message.
 
