@@ -20,18 +20,17 @@ To allow custom validation A **granite:data** node of type nt:unstructured will 
  - regexMode
  - min
  - max
-> Note : **regexText** *and* **regexMode** *properties are optional.* **min** *and* **max** properties are also optional and required for multifield validation.
-
+> **Note :** All the above properties except ***regex*** are optional.
 
 |**Name**|**Type**|**Description**|
 |--- |--- |--- |
-|regex|String|This property specify the type of validation based on values. Possible values are ***Regular Expression***, `required` and `multifield`.|
-|regexText|String|Message to display in case of field input is not valid. `Invalid input` is default. |
-|regexMode|String|Indicates how to display error messages. Possible values are `inline`, `floating` and `auto`. `inline` is default.|
+|regex|String|This is mandatory property, specify the type of validation based on values. Values can be ***Regular Expression***, `required` or `multifield`.|
+|regexText|String|Optional property to specify message to be displayed in case of field input is not valid. `Invalid input` is default. |
+|regexMode|String|Optional property, indicates how to display error messages. Values can be `inline`, `floating` or `auto`. `inline` is default.|
 |min|String|Define Minimum items required for the Multifield.|
 |max|String|Define Maximum items allowed for the Multifield.|
 
-> Note : `min` and `max` both are optional and required in `regex` property set to ***multifield***
+> **Note :** `min` and `max` both are optional and required if `regex` property set to ***multifield***
 
 
 
@@ -78,7 +77,8 @@ To setup this a clienlibs of category `cq.authoring.dialog` needs to be created 
  - Add `regex` and other properties
   
 >    **Note :** No need to create `granite:data` node for RTE(*cq/gui/components/authoring/dialog/richtext*) field.
->    regex and other properties can be added directly to RTE field node
+>    regex and other properties can be added directly to RTE field node.
+>    For checkboxList validation(atleast one should be checked) add properties to granite/ui/components/coral/foundation/form/fieldset node.
 
 ## Supports
 
