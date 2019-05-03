@@ -77,8 +77,9 @@ To setup this a clienlibs of category `cq.authoring.dialog` needs to be created 
  - Add `regex` and other properties
   
 >    **Note :** No need to create `granite:data` node for RTE(*cq/gui/components/authoring/dialog/richtext*) field.
->    regex and other properties can be added directly to RTE field node.
->    For checkboxList validation(atleast one should be checked) add properties to granite/ui/components/coral/foundation/form/fieldset node.
+>    `regex` and other properties can be added directly to RTE field node.
+
+>   For checkboxList validation(atleast one should be checked) add properties to granite/ui/components/coral/foundation/form/fieldset node.
 
 ## Supports
 
