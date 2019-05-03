@@ -58,9 +58,27 @@ In case of `regexMode`  property value is *floating* , setup to show error messa
 |regex-model-heading|String|This property specify the Header text of model(popup). `Dialog cannot be submitted` is default|
 |regex-content-heading|String|Popup dialog content header. `Following Fields are invalid` is default. |
 
-## Setup
+## Getting Started
+### Prerequisites
+To setup this a clienlibs of category `cq.authoring.dialog` needs to be created from crxde. 
 
-This solution is mainly targeted for new version on AEM and most used granite input type resources. Below is the list of supported AEM version and Resource types.
+ - Copy `touchui.regex.validation.css` css file from
+ - Copy below js  based on AEM version
+
+|**Version**|**Js file**|
+|--- |--- |
+|AEM 6.3|touchui.regex.validation.aemV63.js|
+|AEM 6.4 and above|touchui.regex.validation.js|
+
+ - Update `js.txt` and `css.txt` 
+
+### Create Properties
+
+ - Create `granite:data` node parallel(sibling) to item node
+ - Add `regex` and other properties
+  
+>    **Note :** No need to create `granite:data` node for RTE(*cq/gui/components/authoring/dialog/richtext*) field.
+>    regex and other properties can be added directly to RTE field node
 
 ## Supports
 
