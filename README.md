@@ -99,15 +99,15 @@ This solution is mainly targeted for new version on AEM and most used granite in
  - granite/ui/components/coral/foundation/form/datepicker
  - granite/ui/components/coral/foundation/form/multifield
 
-## Pros and Cons
+## Features
 
  - Solution is based on javascript, no need to do any server side changes or
    resource overlay.
  - easy to plug-in to existing aem dialog clientlibs.
  - Easy to use.
- - Supports latest versions of AEM i.e. AEM 6.3 and above.
- - Support most commonly used Granite(Coral3) resources type fields.
- - Works with design dialog/policy(static and dynamic templates).
+ - Supports latest versions of AEM i.e. AEM 6.3, 6.4 and 6.5.
+ - Supports most commonly used Granite(Coral3) resources type fields.
+ - Supports with design dialog/policy(static and dynamic templates).
  #### Limitations
  - Doesn't support coral2 type resource type.
  - Only support Granite resources(mentioned in the [Supports](#granitecoral3-resource-type) section)
