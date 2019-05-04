@@ -127,7 +127,7 @@ This solution is mainly targeted for new version on AEM and most used granite in
 	 - `Tab--> FieldLabel : RegexText`. 
 	 - And for multifield `Tab--> FieldLabel[index] : RegexText`. 
 	 - But does not show complete nested structure(breadcrumb).
- - Avoid using both OOTB `required` property and `regex`  property validations together. This can results in conflicts.
+ - Avoid using both OOTB `required` property and `regex`  property for field validation. This can results in conflicts and dialog will not be submitted. Both properties can be used together for different fields for same dialog.
  - In case of inline error mode , if `fieldLabel`  property is missing then error tooltip may be shown in next line(OOTB behaviour).
 
 
