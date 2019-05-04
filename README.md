@@ -37,9 +37,21 @@ To allow custom validation A **granite:data** node of type nt:unstructured will 
 #### Configuring *regex* property
 |**Value**|**Description**|
 |--- |--- |
-|Regular Expression|If value is set to regular expression, field will be validated against specified regEx string.e.g. `^#([A-Fa-f0-9]{3}){1,2}$`|
+|Regular Expression|If value is set to regular expression, field will be validated against specified regular Expression string (*.e.g.* `^#([A-Fa-f0-9]{3}){1,2}$`) using `RegExp` javascript object. Constructor function of the `RegExp` javascript object uses value of `regex` property and provides runtime compilation of the regular expression. |
 |required|if the field is mandatory to be filled. |
 |multifield|if the multifield is mandatory to be have minimum or/and maximum items. In this case `min` and/or `max` properties should be set.|
+
+> **Example :** Code to show regular expressioin validation with and without `RegExp` Object .
+
+```js
+// Javascript validation using regular expression without `RegExp` Object
+/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test('abc.def@demo.com');
+
+// Javascript validation using regular expression with `RegExp` Object
+var re = new RegExp("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$");
+re.test('abc.def@demo.com');
+
+```
 
 #### Configuring *regexMode* property
 |**Value**|**Description**|
