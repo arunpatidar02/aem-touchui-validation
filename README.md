@@ -37,11 +37,12 @@ To allow custom validation A **granite:data** node of type nt:unstructured will 
 #### Configuring *regex* property
 |**Value**|**Description**|
 |--- |--- |
-|Regular Expression|If value is set to regular expression, field will be validated against specified regular Expression string (*.e.g.* `^#([A-Fa-f0-9]{3}){1,2}$`) using `RegExp` javascript object. Constructor function of the `RegExp` javascript object uses value of `regex` property and provides runtime compilation of the regular expression. |
+|Regular Expression|If value is set to regular expression, field will be validated against specified regular Expression string (*.e.g.* `^#([A-Fa-f0-9]{3}){1,2}$`).|
 |required|if the field is mandatory to be filled. |
 |multifield|if the multifield is mandatory to be have minimum or/and maximum items. In this case `min` and/or `max` properties should be set.|
 
-> **Note :** In AEM 6.3, use \\\\ and for 6.4 & above use \\ to escape **backslash(\)**
+> **Note :** For AEM 6.3, use \\\\ and for 6.4 & above use \\ to escape **backslash(\)** while creating regex property, 
+> AEM removes the extra backslash as soon as property is saved(Sometimes this could lead into the issue when you package node changes and deploy). Please varify changes after deployment if your regular expression has **backslash(\)**.
 
 > **Example :** 
 > For *Regular Expression :* `\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$` , fields `regex` property will have the following values
@@ -50,7 +51,7 @@ To allow custom validation A **granite:data** node of type nt:unstructured will 
 
 > AEM 6.4 and above --> `^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$`
 
-To make sure, provided `regex` property value is in correct format, regular expression can be varified from fields HTML DOM.
+To make sure, `regex` property value is correct, regular expression can be varified from fields HTML DOM.
 For example for above regular expression whichever value format(*either 6.3 or 6.4 syntax*) is used for `regex` property, the value of `data-regex` attribute of fields HTML DOM should be the render correct regular expression `\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$`.
 i.e.`data-regex="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"`
 
