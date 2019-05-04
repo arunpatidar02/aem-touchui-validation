@@ -1,7 +1,0 @@
-#base=js
-
-#AEM 6.5 and above
-touchui.regex.validation.js
-
-#AEM 6.3 version file
-#touchui.regex.validation.aemV63.js
