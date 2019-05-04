@@ -81,8 +81,7 @@ To setup this a clienlibs of category `cq.authoring.dialog` needs to be created 
 This solution is mainly targeted for new version on AEM and most used granite input type resources. Below is the list of supported AEM version and Resource types.
 
 #### AEM Version
- - AEM 6.3 AEM 
- - 6.4 and above
+ - AEM 6.3 and above
 
 #### Granite(Coral3) Resource type
  - granite/ui/components/coral/foundation/form/textfield
