@@ -61,15 +61,10 @@ In case of `regexMode`  property value is *floating* , setup to show error messa
 ### Prerequisites
 To setup this a clienlibs of category `cq.authoring.dialog` needs to be created from crxde. 
 
- - Copy `touchui.regex.validation.css` css file from [css](https://github.com/arunpatidar02/aem-touchui-validation/tree/master/css) folder
- - Copy below js  based on AEM version from [js](https://github.com/arunpatidar02/aem-touchui-validation/tree/master/js) folder
-
-|**Version**|**Js file**|
-|--- |--- |
-|AEM 6.3|touchui.regex.validation.aemV63.js|
-|AEM 6.4 and above|touchui.regex.validation.js|
-
+ - Copy `touchui.regex.validation.css` css file from [css](https://github.com/arunpatidar02/aem-touchui-validation/tree/master/touchui-regex-validation/css) folder
+ - Copy `touchui.regex.validation.js` js  file from [js](https://github.com/arunpatidar02/aem-touchui-validation/tree/master/touchui-regex-validation/js) folder
  - Update `js.txt` and `css.txt` 
+> Note : Above all files available at [touchui-regex-validation](https://github.com/arunpatidar02/aem-touchui-validation/tree/master/touchui-regex-validation)
 
 ### Create Properties
 
@@ -129,7 +124,7 @@ This solution is mainly targeted for new version on AEM and most used granite in
 #### Sample Package
  Sample package contains clientlibs and sample component dialog with all above fields property setup
  
- [aem-touchui-regexvalidation-sample-1.zip](https://github.com/arunpatidar02/aem-touchui-validation)
+ [aem-touchui-regexvalidation-sample-1.zip](https://github.com/arunpatidar02/aem-touchui-validation/blob/master/aem-touchui-regexvalidation-sample-1.zip)
  
  #### More Info
  More details with screenshots is availble at [https://aemlab.blogspot.com/2019/05/aem-touch-ui-component-dialog-field.html](https://aemlab.blogspot.com/2019/05/aem-touch-ui-component-dialog-field.html) 
