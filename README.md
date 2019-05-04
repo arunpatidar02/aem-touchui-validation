@@ -64,7 +64,7 @@ To setup this a clienlibs of category `cq.authoring.dialog` needs to be created 
  - Copy `touchui.regex.validation.css` css file from [css](https://github.com/arunpatidar02/aem-touchui-validation/tree/master/touchui-regex-validation/css) folder
  - Copy `touchui.regex.validation.js` js  file from [js](https://github.com/arunpatidar02/aem-touchui-validation/tree/master/touchui-regex-validation/js) folder
  - Update `js.txt` and `css.txt` 
-> Note : Above all files available at [touchui-regex-validation](https://github.com/arunpatidar02/aem-touchui-validation/tree/master/touchui-regex-validation)
+> Note : Above all files are available at [touchui-regex-validation](https://github.com/arunpatidar02/aem-touchui-validation/tree/master/touchui-regex-validation)
 
 ### Create Properties
 
