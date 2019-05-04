@@ -41,17 +41,25 @@ To allow custom validation A **granite:data** node of type nt:unstructured will 
 |required|if the field is mandatory to be filled. |
 |multifield|if the multifield is mandatory to be have minimum or/and maximum items. In this case `min` and/or `max` properties should be set.|
 
-> **Example :** Code to show regular expressioin validation with and without `RegExp` Object .
+> **Note :** In AEM 6.3, use \\\\ and for 6.4 & above use \\ to escape **backslash(\)**
 
-```js
-// Javascript validation using regular expression without `RegExp` Object
-/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test('abc.def@demo.com');
+> **Example :** 
+> For *Regular Expression :* `\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$` , fields `regex` property will have the following values
 
-// Javascript validation using regular expression with `RegExp` Object
-var re = new RegExp("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$");
-re.test('abc.def@demo.com');
+> AEM 6.3 --> `^\\\\w+([\\\\.-]?\\\\w+)*@\\\\w+([\\\\.-]?\\\\w+)*(\\\\.\\\\w{2,3})+$`
 
-```
+> AEM 6.4 and above --> `^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$`
+
+To make sure, provided `regex` property value is in correct format, regular expression can be varified from fields HTML DOM.
+For example for above regular expression whichever value format(*either 6.3 or 6.4 syntax*) is used for `regex` property, the value of `data-regex` attribute of fields HTML DOM should be the render correct regular expression `\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$`.
+i.e.`data-regex="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"`
+
+````HTML
+<input class="coral-Form-field coral3-Textfield" data-regexmode="auto" data-regextext="Invalid email address" data-regex="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" type="text" name="./email" labelledby="label_c9fe8014-e6fe-40c0-91a4-f14b88980b99 description_c9fe8014-e6fe-40c0-91a4-f14b88980b99" value="" data-foundation-validation="" data-validation="" is="coral-textfield" id="coral-id-2300" aria-labelledby="label_c9fe8014-e6fe-40c0-91a4-f14b88980b99 description_c9fe8014-e6fe-40c0-91a4-f14b88980b99" aria-invalid="false">
+````
+> In short, choose regex value format which render correct regular expression.
+
+
 
 #### Configuring *regexMode* property
 |**Value**|**Description**|
