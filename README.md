@@ -45,7 +45,7 @@ To allow custom validation A **granite:data** node of type nt:unstructured will 
 |**Value**|**Description**|
 |--- |--- |
 |inline|The error message will be displayed alongside field in the component dialog. similar to OOTB `required` property validation error.|
-|floating|To display error message in model(popup) window |
+|floating|To display error message in modal(popup) window |
 |auto|Error message will be shown in both the mode, i.e. inline as well as popup.|
 
 ## Other Properties
@@ -54,7 +54,7 @@ In case of `regexMode`  property value is *floating* , setup to show error messa
 
 |**Name**|**Type**|**Description**|
 |--- |--- |--- |
-|regex-model-heading|String|This property specify the Header text of model(popup). `Dialog cannot be submitted` is default|
+|regex-modal-heading|String|This property specify the Header text of modal(popup). `Dialog cannot be submitted` is default|
 |regex-content-heading|String|Popup dialog content header. `Following Fields are invalid` is default. |
 
 ## Getting Started
@@ -127,5 +127,4 @@ This solution is mainly targeted for new version on AEM and most used granite in
  
  #### More Info
  More details with screenshots is availble at [https://aemlab.blogspot.com/2019/05/aem-touch-ui-component-dialog-field.html](https://aemlab.blogspot.com/2019/05/aem-touch-ui-component-dialog-field.html) 
-
 
