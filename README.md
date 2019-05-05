@@ -32,7 +32,7 @@ To allow custom validation A **granite:data** node of type nt:unstructured will 
 |max|String|Define Maximum items allowed for the Multifield.|
 
 > **Note :** Only `regex` property is mandatory, Others are optional properties.
-> `min` and `max` both are optional and required if `regex` property set to ***multifield***
+> `min` and `max` both are optional and required if `regex` property value is ***multifield***
 
 
 
