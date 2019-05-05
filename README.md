@@ -8,7 +8,7 @@ You already know the use of Granite UI widget's **required** property - Indicate
 The custom validations for touch UI dialog fields are very common, which required writing client side javascript/jquery scrips but end up writing too much code. 
 
 I created a solution, inspired by classic UI widget **regex** and **regexText** properties, which allow widget(field) value checked against **regex** property value and shows custom error message, set in **regexText** property . 
-The solution for Touch UI is same, which allows custom validation for Granite(Coral3) fileds.
+The solution for Touch UI is same, which allows custom validation for Granite(Coral3) fields.
 
 
 
@@ -20,7 +20,8 @@ To allow custom validation A **granite:data** node of type nt:unstructured will 
  - regexMode
  - min
  - max
-> **Note :** All the above properties except ***regex*** are optional.
+
+
 
 |**Name**|**Type**|**Description**|
 |--- |--- |--- |
@@ -30,7 +31,8 @@ To allow custom validation A **granite:data** node of type nt:unstructured will 
 |min|String|Define Minimum items required for the Multifield.|
 |max|String|Define Maximum items allowed for the Multifield.|
 
-> **Note :** `min` and `max` both are optional and required if `regex` property set to ***multifield***
+> **Note :** Only `regex` property is mandatory, Others are optional properties.
+> `min` and `max` both are optional and required if `regex` property set to ***multifield***
 
 
 
@@ -41,25 +43,25 @@ To allow custom validation A **granite:data** node of type nt:unstructured will 
 |required|if the field is mandatory to be filled. |
 |multifield|if the multifield is mandatory to be have minimum or/and maximum items. In this case `min` and/or `max` properties should be set.|
 
-> **Note :** For AEM 6.3, use \\\\ and for 6.4 & above use \\ to escape **backslash(\)** while creating regex property, 
-> AEM removes the extra backslash as soon as property is saved(Sometimes this could lead into the issue when you package node changes and deploy). Please varify changes after deployment if your regular expression has **backslash(\)**.
+> **Note :** For AEM 6.3, If regular expression contains `\`, regex property value should have `\\`.(Not required in AEM 6.4+)   
+> **Note :** Since AEM removes the backslash(if not escape) as soon as property is saved, to avoid that in AEM 6.3, use `\\\\` and for 6.4+ use `\\`  while creating regex property value.
 
-> **Example :** 
-> For *Regular Expression :* `\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$` , fields `regex` property will have the following values
-
+#### Tips
+For *Regular Expression :* `\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$` , use below values for `regex` property before save.
 > AEM 6.3 --> `^\\\\w+([\\\\.-]?\\\\w+)*@\\\\w+([\\\\.-]?\\\\w+)*(\\\\.\\\\w{2,3})+$`
-
 > AEM 6.4 and above --> `^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$`
 
+As soon as you save the property AEM will remove the extra `\` and after refreshing **granite:data** node, `regex` property value should be look like below:
+> AEM 6.3 --> `^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$`
+> AEM 6.4 and above --> `\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$`
+
 To make sure, `regex` property value is correct, regular expression can be varified from fields HTML DOM.
-For example for above regular expression whichever value format(*either 6.3 or 6.4 syntax*) is used for `regex` property, the value of `data-regex` attribute of fields HTML DOM should be the render correct regular expression `\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$`.
+For above regular expression (*either 6.3 or 6.4 syntax*), the value of `data-regex` attribute of fields HTML DOM should render the regular expression without escaping `\` i.e. `\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$`.
 i.e.`data-regex="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"`
 
 ````HTML
 <input class="coral-Form-field coral3-Textfield" data-regexmode="auto" data-regextext="Invalid email address" data-regex="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" type="text" name="./email" labelledby="label_c9fe8014-e6fe-40c0-91a4-f14b88980b99 description_c9fe8014-e6fe-40c0-91a4-f14b88980b99" value="" data-foundation-validation="" data-validation="" is="coral-textfield" id="coral-id-2300" aria-labelledby="label_c9fe8014-e6fe-40c0-91a4-f14b88980b99 description_c9fe8014-e6fe-40c0-91a4-f14b88980b99" aria-invalid="false">
 ````
-> In short, choose regex value format which render correct regular expression.
-
 
 
 #### Configuring *regexMode* property
